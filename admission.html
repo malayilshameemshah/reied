@@ -16,6 +16,13 @@
             margin-top: 20%;
             font-size: 24px;
             color: #333;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .maintenance-message.show {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -24,5 +31,13 @@
         <p>Sorry, this website is currently under maintenance.</p>
         <p>Please check back later.</p>
     </div>
+
+    <script>
+        // Add animation class after a short delay (e.g., 2 seconds)
+        setTimeout(function() {
+            var maintenanceMessage = document.querySelector('.maintenance-message');
+            maintenanceMessage.classList.add('show');
+        }, 2000);
+    </script>
 </body>
 </html>
